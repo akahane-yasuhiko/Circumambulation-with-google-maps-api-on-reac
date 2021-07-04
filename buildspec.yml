@@ -12,8 +12,6 @@ phases:
       - npm -v
   pre_build:
     commands:
-      - echo Entring app directory
-      - cd react-app
       - npm install
   build:
     commands:
@@ -26,4 +24,4 @@ phases:
 artifacts:
   files:
     - '**/*'
-  base-directory: react-app/build
+  base-directory: build
