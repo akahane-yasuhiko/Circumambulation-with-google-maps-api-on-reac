@@ -6,8 +6,9 @@ interface Num {
 };
 
 const coefficient_for_lat135 = 0.00001
-const lblTokyoSta="東京駅"
+const lblTokyoSta=""
 var cc="#77AAFF"
+var infoTxt="far"
 
 const containerStyle = {
     // height: "100vh",
@@ -71,10 +72,10 @@ const Map = () => {
   function getInOut(){
       if((positionRunner.lng - positionTokyoSta.lng)**2+(positionRunner.lat - positionTokyoSta.lat)**2 < (radiusTokyoSta*coefficient_for_lat135)**2){
         cc="#FF0000"
-        return "IN";
+        return "near";
       } else {
         cc="#77AAFF"
-        return "OUT";
+        return "far";
       }
   }
 
