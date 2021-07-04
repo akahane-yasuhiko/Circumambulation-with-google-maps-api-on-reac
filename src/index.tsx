@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Timer from './Timer';
+// import Timer from './Timer';
 import Map from './Map';
 import reportWebVitals from './reportWebVitals';
 
