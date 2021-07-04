@@ -1,0 +1,29 @@
+
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm install -g n
+      - n stable
+      - npm update -g npm
+      - npm install
+      - node -v
+      - npm -v
+  pre_build:
+    commands:
+      - echo Entring app directory
+      - cd react-app
+      - npm install
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run-script build
+  post_build:
+    commands:
+      - aws s3 sync build/ s3://circumambulation-with-google-maps-api-on-react/ --exclude '*.DS_Store' --acl public-read --cache-control public,max-age=604800
+      - aws cloudfront create-invalidation --distribution-id EMMBWK7K3MLPX --paths /index.html /js/bundle.js"
+artifacts:
+  files:
+    - '**/*'
+  base-directory: react-app/build
