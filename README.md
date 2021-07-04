@@ -3,9 +3,9 @@
 memo
 
 - run on development mode
-npm start
+  - npm start
 
 - run on production mode
-npm run-script build
-npm install -g serve
-npx serve -s build
+  - npm run-script build
+  - npm install -g serve
+  - npx serve -s build
